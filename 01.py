@@ -16,7 +16,7 @@ for i in range(len(data)):
 #Превращаем все значения в целочисленные 
 
 for i in range(len(data)): 
-      for k in range (len(data)): 
+      for k in range (len(data[i])): 
             if k==0 or k==2 or k==3: 
                 data[i][k] = int(data[i][k]) 
 
@@ -56,6 +56,11 @@ for r in mark:
 for i in range(len(data)):
     data[i].append(bal[data[i][2]])
 
+for h in range(len(data)):
+    if data[h][1] != 'passed':
+        data[h][4] = 0
+        
+
 dou = {}
 for el in data:
     if el[0] in dou.keys():
@@ -83,5 +88,5 @@ for i in start_time:
             kon_time.append([i,start_time[i][1] - start_time[i][0]])
 kon_time.sort(key = lambda x: x[1])
 for i in range(10):
-      print (kon_time[i][1],end=", ")
+      print (kon_time[i][0],end=", ")
 
